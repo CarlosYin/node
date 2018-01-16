@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "aliyun-dysms-sdk": "^1.0.0",
+    "assert": "^1.4.1",
+    "bluebird": "^3.5.1",
+    "body-parser": "~1.18.2",
+    "express": "~4.15.5",
+    "express-validation": "^1.0.2",
+    "http-status": "^1.0.1",
+    "joi": "^13.0.2",
+    "mongoose": "^4.13.4",
+    "mpromise": "^0.5.5",
+    "nodemon": "^1.12.1"
+  }
+}
