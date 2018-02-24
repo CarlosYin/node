@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "apiDoc":"apidoc -i controllers/ -o public/apidoc"
   },
   "dependencies": {
     "aliyun-dysms-sdk": "^1.0.0",

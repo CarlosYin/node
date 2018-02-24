@@ -12,7 +12,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
- var lport = '3004';
+var lport = '3004';
 
 var port = normalizePort(process.env.PORT || lport);
 app.set('port', port);
@@ -89,4 +89,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   // debug('Listening on ' + bind);
+
+  console.log('服务器监听 http://localhost:' + port);
 }

@@ -4,10 +4,14 @@ var User = require('../models/user.model');
 var RetBase = require('../helpers/baseHelper');
 
 /**
- * Create new user
- * @property {string} req.body.username - The username of user.
- * @property {string} req.body.mobileNumber - The mobileNumber of user.
- * @returns {User}
+ * 新建问题
+ * @api {POST} /api/users/:id 新建问题2
+ * @apiDescription 根据ID获得某个用户
+ * @apiName getUser
+ * @apiParam (path参数) {Number} id
+ * @apiSampleRequest /api/users/5a45cefd080d7c39a036ca55
+ * @apiGroup User
+ * @apiVersion 1.0.0
  */
 function create(req, res, next) {
   // res.json({msg:'无权限'});
