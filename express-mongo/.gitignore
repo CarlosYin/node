@@ -1,8 +1,6 @@
 #node包
 node_modules/
 
-#mac文件
-../.DS_Store
-
 #apidoc
+
 public/
