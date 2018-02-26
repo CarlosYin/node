@@ -2,12 +2,14 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require('body-parser');
-var RetBase = require('./routes/index');
+var RetBase = require('./helpers/baseHelper');
 
 
 var mongoose = require('mongoose');
 
-
+//全局常量
+var constant = require('./config/icardconfig');
+global.CONSTANT = constant;
 
 //通用跨域过滤
 app.all("*", function (req, res, next) {
@@ -26,8 +28,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use(function(req,res,next){
-  console.log(req.hostname);
-  console.log(req.ip);
+  // console.log(req.hostname);
+  // console.log(req.ip);
   next();
 })
 
@@ -55,9 +57,9 @@ var userRouter = require('./routes/user.route');
 var quersionRouter = require('./routes/quersion.route');
 var testRouter = require('./routes/test.route');
 
-// app.use('/api/user', userRouter);
-app.use('/api/quersions', quersionRouter);
-app.use('/api/test', testRouter);
+app.use('/user', userRouter);
+app.use('/quersions', quersionRouter);
+app.use('/test', testRouter);
 
 
 

@@ -12,7 +12,7 @@ router.route('/')
   /** POST /api/users - Create new user */
   // .post(validate(paramValidation.createUser), userCtrl.create);
   // .post(validate(paramValidation.createUser),userCtrl.create);
-  .post(userCtrl.create);
+  .all(userCtrl.create);
 
 // router.route('/getSMS')
 //   .post(userCtrl.getSMS);

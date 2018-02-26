@@ -1,10 +1,10 @@
 {
-    "name": "sunApiSvr", 
+    "name": "太阳堂Icard API", 
     "version": "1.0.0", 
-    "description": "sunApiSvr项目API文档",
-    "title": "sunApiSvr API", 
-    "url": "http://localhost:3004/api",
-    "sampleUrl": "http://localhost:3004/api",
+    "description": "太阳堂Icard项目 API文档",
+    "title": "太阳堂Icard API", 
+    "url": "http://api.2yhl.com",
+    "sampleUrl": "http://api.2yhl.com",
     "forceLanguage": "zh-cn",
     "template": {
         "withCompare": true,

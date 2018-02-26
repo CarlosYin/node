@@ -7,46 +7,27 @@ var APIError = require('../helpers/APIError');
  * User Schema
  */
 const UserSchema = new mongoose.Schema({
-  username:{
-    type:String
+  name: {
+    type: String
   },
-  mobileNumber:{
-    type:String
+  card: {
+    type: String
   },
-  quersionList:{
-    type:Array,
-    default:[]
+  phone: {
+    type: String
   },
-  answerList:{
-    type:Array,
-    default:[]
+  pwd: {
+    type: String
   },
-  mark:{
-    type:Number,
-    default:-1
+  type: {
+    type: Number,
+    default: 1
   },
-  UseTime:{
-    type:Number,
-    default:-1
-  },
-  getQListTime:{
-    type:Date
-  },
-  postAListTime:{
-    type:Date
-  },
-  createdAt:{
-    type:Date,
-    default:Date.now
+  createdTime: {
+    type: Date,
+    default: Date.now
   }
 });
-
-/**
- * Add your
- * - pre-save hooks
- * - validations
- * - virtuals
- */
 
 /**
  * Methods
@@ -64,7 +45,6 @@ UserSchema.statics = {
    * @returns {Promise<User, APIError>}
    */
   get(id) {
-    console.log('UserSchema get()'+id)
     return this.findById(id)
       .exec()
       .then((user) => {
@@ -74,18 +54,12 @@ UserSchema.statics = {
         const err = new APIError('No such user exists!', httpStatus.NOT_FOUND);
         return Promise.reject(err);
       })
-      .catch((err)=>{
+      .catch((err) => {
         console.log(err);
       })
       ;
   },
 
-  /**
-   * List users in descending order of 'createdAt' timestamp.
-   * @param {number} skip - Number of users to be skipped.
-   * @param {number} limit - Limit number of users to be returned.
-   * @returns {Promise<User[]>}
-   */
   list({ skip = 0, limit = 50 } = {}) {
     return this.find()
       .sort({ createdAt: -1 })

@@ -1,15 +1,13 @@
 
 
 
-function RetBase(status = 200,msg = '',data = {}){
-    var retData = {
-      status:status,
-      msg:msg,
-      data:data
-    }
-    return retData;
+function RetBase(ret = { code: 200, msg: '' }, data = {}) {
+  var retData = {
+    code: ret.code,
+    msg: ret.msg,
+    data: data
   }
-  
-  
-  module.exports = RetBase;
-  
+  return retData;
+}
+
+module.exports = RetBase;
